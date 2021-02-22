@@ -11,8 +11,8 @@ namespace sempt3x_Port_Scanner
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("SEMPT3X Port Scanner v1.0.1 \n\n"); // Programm Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v1.0.1";
+            Console.WriteLine("SEMPT3X Port Scanner v1.0.2 \n\n"); // Programm Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v1.0.2";
             do
             {
                 //* Define Variables *//
