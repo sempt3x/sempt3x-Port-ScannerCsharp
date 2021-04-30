@@ -35,25 +35,19 @@ namespace sempt3x_Port_Scanner
                 //** Begin Third Loop **//
                 do {
                     Console.Write(" Enter the first port: "); // Port 1 Input
-                    try {
+                    try
+                    {
                         chs.Port1 = Convert.ToInt32(Console.ReadLine());
-                        if(string.IsNullOrEmpty(chs.Port1.ToString())) {
-                            chs.Checkinput2 = true;
-                        } else {
-                            chs.Checkinput2 = false;
-                        }
+                        chs.Checkinput2 = string.IsNullOrEmpty(chs.Port1.ToString());
                     }
                     catch(FormatException) {
                         Console.WriteLine(" Failed!");
                     }
                     Console.Write(" Enter the second port: "); // Port 2 Input
-                    try {
+                    try
+                    {
                         chs.Port2 = Convert.ToInt32(Console.ReadLine());
-                        if(string.IsNullOrEmpty(chs.Port2.ToString())) {
-                            chs.Checkinput3 = true;
-                        } else {
-                            chs.Checkinput3 = false;
-                        }
+                        chs.Checkinput3 = string.IsNullOrEmpty(chs.Port2.ToString());
                     } catch {
                         Console.WriteLine(" Failed!");
                     }
