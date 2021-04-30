@@ -17,36 +17,36 @@ namespace sempt3x_Port_Scanner
             {
                 //* Define Variables *//
                 string ipeingabe = "";
-                int port1 = 0, port2 = 0;
+                int port_1 = 0, port2 = 0;
 
                 Console.Write("Enter the IP address: "); // IP Adress Input
                 ipeingabe = Convert.ToString(Console.ReadLine());
 
                 Console.Write("Enter the first port: "); // Port1 Input
-                port1 = Convert.ToInt32(Console.ReadLine());
+                port_1 = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Enter the second port: "); // Port2 Input
-                port2 = Convert.ToInt32(Console.ReadLine());
+                port_2 = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("\n");
                 do // Begin Do While Loop
                 {
                     TcpClient client = new TcpClient();
-                    port1++;
+                    port_1++;
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        client.Connect(ipeingabe, port1);
+                        client.Connect(ipeingabe, port_1);
                         client.SendTimeout = 1;
-                        Console.WriteLine("[TCP-Port: " + port1 + " ] Port is open!");
+                        Console.WriteLine("[TCP-Port: " + port_1 + " ] Port is open!");
                     }
                     catch (SocketException)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("[TCP-Port: " + port1 + " ] Port is not open!");
+                        Console.WriteLine("[TCP-Port: " + port_1 + " ] Port is not open!");
                         client.SendTimeout = 1;
                     }
-                } while (port1 < port2); // End Do While Loop
+                } while (port_1 < port_2); // End Do While Loop
 
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\n\n");
