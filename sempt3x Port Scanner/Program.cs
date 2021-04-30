@@ -21,8 +21,8 @@ namespace sempt3x_Port_Scanner
             CheckStatus chs = new CheckStatus();
 
             //* Application Information *//
-            Console.WriteLine("SEMPT3X Port Scanner v1.1.0 \n\n"); // Programm Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v1.1.0";
+            Console.WriteLine("SEMPT3X Port Scanner v1.1.0 \n\n"); // Program Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v1.1.0"; // Program Title Text
 
             //* Frist Loop **//
             do
@@ -32,7 +32,7 @@ namespace sempt3x_Port_Scanner
 
                 //* Second Loop **//
                 do {
-                Console.Write("Enter the first port: "); // Port1 Input
+                Console.Write("Enter the first port: "); // Port 1 Input
                 try {
                     chs.port_1 = Convert.ToInt32(Console.ReadLine());
                         if(String.IsNullOrEmpty(chs.port_1.ToString())) {
@@ -44,7 +44,7 @@ namespace sempt3x_Port_Scanner
                 catch(System.FormatException) {
                     Console.WriteLine("Failed!");
                 }
-                Console.Write("Enter the second port: "); // Port2 Input
+                Console.Write("Enter the second port: "); // Port 2 Input
                 try {
                     chs.port_2 = Convert.ToInt32(Console.ReadLine());
                         if(String.IsNullOrEmpty(chs.port_2.ToString())) {
@@ -56,7 +56,7 @@ namespace sempt3x_Port_Scanner
                     Console.WriteLine("Failed!");
                 }
                 }while(chs.checkinput1 == true || chs.checkinput2 == true);
-
+                //** End Second Loop **//
                 Console.WriteLine("\n");
                 //** Third Loop **//
                 do
@@ -76,11 +76,14 @@ namespace sempt3x_Port_Scanner
                         Console.WriteLine("[TCP-Port: " + chs.port_1 + " ] Port is not open!");
                         client.SendTimeout = 1;
                     }
-                } while (chs.port_1 < chs.port_2); // End Do While Loop
-
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\n\n");
+                } while (chs.port_1 < chs.port_2);
+                //** End Third Loop **//
             } while (true);
+            //** End First Loop **//
+
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\n");
 
             // Program Ending
         }
