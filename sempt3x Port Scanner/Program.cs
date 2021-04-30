@@ -11,7 +11,7 @@ namespace sempt3x_Port_Scanner
         //* Define Variables *//
         public string ipeingabe = "";
         public int port_1 = 0, port_2 = 0;
-        public bool checkinput1 = true, checkinput2 = true;
+        public bool checkinput1 = true, checkinput2 = true, checkipinput = true;
     }
     internal class Program
     {
@@ -21,16 +21,25 @@ namespace sempt3x_Port_Scanner
             CheckStatus chs = new CheckStatus();
 
             //* Application Information *//
-            Console.WriteLine("SEMPT3X Port Scanner v1.1.0 \n\n"); // Program Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v1.1.0"; // Program Title Text
+            Console.WriteLine("SEMPT3X Port Scanner v1.1.1 \n\n"); // Program Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v1.1.1"; // Program Title Text
 
-            //* Frist Loop **//
+            //* Begin Frist Loop **//
             do
             {
                 Console.Write("Enter the IP address: "); // IP Adress Input
-                chs.ipeingabe = Convert.ToString(Console.ReadLine());
 
-                //* Second Loop **//
+                //** Begin Second Loop **/
+                do {
+                    chs.ipeingabe = Convert.ToString(Console.ReadLine());
+                    if(String.IsNullOrEmpty(chs.ipeingabe)) {
+                        chs.checkipinput = true;
+                    } else {
+                        chs.checkipinput = false;
+                            }
+                }while(chs.checkipinput == true);
+                //** End Second Loop **//
+                //** Begin Third Loop **//
                 do {
                 Console.Write("Enter the first port: "); // Port 1 Input
                 try {
@@ -56,9 +65,9 @@ namespace sempt3x_Port_Scanner
                     Console.WriteLine("Failed!");
                 }
                 }while(chs.checkinput1 == true || chs.checkinput2 == true);
-                //** End Second Loop **//
+                //** End Third Loop **//
                 Console.WriteLine("\n");
-                //** Third Loop **//
+                //** Begin Fourth Loop **//
                 do
                 {
                     TcpClient client = new TcpClient();
@@ -77,7 +86,7 @@ namespace sempt3x_Port_Scanner
                         client.SendTimeout = 1;
                     }
                 } while (chs.port_1 < chs.port_2);
-                //** End Third Loop **//
+                //** End Fourth Loop **//
             } while (true);
             //** End First Loop **//
 
