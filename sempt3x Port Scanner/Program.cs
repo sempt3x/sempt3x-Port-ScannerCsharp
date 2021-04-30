@@ -17,7 +17,7 @@ namespace sempt3x_Port_Scanner
             {
                 //* Define Variables *//
                 string ipeingabe = "";
-                int port_1 = 0, port2 = 0;
+                int port_1 = 0, port_2 = 0;
 
                 Console.Write("Enter the IP address: "); // IP Adress Input
                 ipeingabe = Convert.ToString(Console.ReadLine());
