@@ -1,34 +1,18 @@
 ﻿// Author: sempt3x
 // Copyright 2021
 
-
 using System;
 using System.Net.Sockets;
 
 namespace sempt3x_Port_Scanner
 {
-    class CheckStatus {
-        //** Define Variables **//
-        public string ipeingabe = "";
-        public int port_1 = 0, port_2 = 0;
-        public bool checkinput1 = true, checkinput2 = true, checkipinput = true;
-        //** Reset Method **//
-        public void ResetPorts() {
-            ipeingabe = "";
-            port_1 = 0;
-            port_2 = 0;
-            checkipinput = true;
-            checkinput1 = true;
-            checkinput2 = true;
-        }
-    }
-    internal class Program
+    internal static class Program
     {
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White; // Set Start Color to White
             //* Create Object *//
-            CheckStatus chs = new CheckStatus();
+            var chs = new CheckStatus();
 
             //* Application Information *//
             Console.WriteLine(" SEMPT3X Port Scanner v1.1.2 \n"); // Program Console Beginning Text
@@ -38,67 +22,70 @@ namespace sempt3x_Port_Scanner
             do
             {
                 Console.Write("\n Enter the IP address: "); // IP Adress Input
-
                 //** Begin Second Loop **/
                 do {
-                    if(String.IsNullOrEmpty(chs.ipeingabe)) {
-                        chs.checkipinput = true;
-                        chs.ipeingabe = Convert.ToString(Console.ReadLine());
+                    if(string.IsNullOrEmpty(chs.Ipeingabe)) {
+                        chs.Checkinput1 = true;
+                        chs.Ipeingabe = Convert.ToString(Console.ReadLine());
                     } else {
-                        chs.checkipinput = false;
+                        chs.Checkinput1 = false;
                     }
-                }while(chs.checkipinput == true);
+                }while(chs.Checkinput1 == true);
                 //** End Second Loop **//
                 //** Begin Third Loop **//
                 do {
-                Console.Write(" Enter the first port: "); // Port 1 Input
-                try {
-                    chs.port_1 = Convert.ToInt32(Console.ReadLine());
-                        if(String.IsNullOrEmpty(chs.port_1.ToString())) {
-                            chs.checkinput1 = true;
+                    Console.Write(" Enter the first port: "); // Port 1 Input
+                    try {
+                        chs.Port1 = Convert.ToInt32(Console.ReadLine());
+                        if(string.IsNullOrEmpty(chs.Port1.ToString())) {
+                            chs.Checkinput2 = true;
                         } else {
-                            chs.checkinput1 = false;
+                            chs.Checkinput2 = false;
                         }
-                }
-                catch(System.FormatException) {
-                    Console.WriteLine(" Failed!");
-                }
-                Console.Write(" Enter the second port: "); // Port 2 Input
-                try {
-                    chs.port_2 = Convert.ToInt32(Console.ReadLine());
-                        if(String.IsNullOrEmpty(chs.port_2.ToString())) {
-                            chs.checkinput2 = true;
+                    }
+                    catch(FormatException) {
+                        Console.WriteLine(" Failed!");
+                    }
+                    Console.Write(" Enter the second port: "); // Port 2 Input
+                    try {
+                        chs.Port2 = Convert.ToInt32(Console.ReadLine());
+                        if(string.IsNullOrEmpty(chs.Port2.ToString())) {
+                            chs.Checkinput3 = true;
                         } else {
-                            chs.checkinput2 = false;
+                            chs.Checkinput3 = false;
                         }
-                } catch {
-                    Console.WriteLine(" Failed!");
-                }
-                }while(chs.checkinput1 == true || chs.checkinput2 == true);
+                    } catch {
+                        Console.WriteLine(" Failed!");
+                    }
+                }while(chs.Checkinput2|| chs.Checkinput3);
                 //** End Third Loop **//
                 Console.WriteLine("\n");
                 //** Begin Fourth Loop **//
                 do
                 {
-                    TcpClient client = new TcpClient();
-                    chs.port_1++;
+                    var client = new TcpClient();
+                    chs.Port1++;
                     try
                     {
                         Console.ForegroundColor = ConsoleColor.Green; // If Port open -> Green
-                        client.Connect(chs.ipeingabe, chs.port_1);
-                        client.SendTimeout = 1;
-                        Console.WriteLine(" [TCP-Port: " + chs.port_1 + " ] Port is open!");
+                        client.Connect(chs.Ipeingabe, chs.Port1);
+                        Console.WriteLine(" [TCP-Port: " + chs.Port1 + " ] Port is open!");
                     }
                     catch (SocketException)
                     {
                         Console.ForegroundColor = ConsoleColor.Red; // If Port closed -> Red
-                        Console.WriteLine(" [TCP-Port: " + chs.port_1 + " ] Port is not open!");
-                        client.SendTimeout = 1;
+                        Console.WriteLine(" [TCP-Port: " + chs.Port1 + " ] Port is not open!");
                     }
-                } while (chs.port_1 < chs.port_2);
+                } while (chs.Port1 < chs.Port2);
                 //** End Fourth Loop **//
                 Console.ForegroundColor = ConsoleColor.White; // Change Console Font Color to White
-                chs.ResetPorts(); // Set all Values of Varabiles to Default
+                //** Set all Values of Varabiles to Default **//
+                chs.Checkinput1 = true;
+                chs.Checkinput2 = true;
+                chs.Checkinput3 = true;
+                chs.Ipeingabe = "";
+                chs.Port1 = 0;
+                chs.Port2 = 0;
             } while (true);
             //** End First Loop **//
 
