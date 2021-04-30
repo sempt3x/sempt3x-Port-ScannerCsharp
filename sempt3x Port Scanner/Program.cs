@@ -8,6 +8,7 @@ using System.Net.Sockets;
 namespace sempt3x_Port_Scanner
 {
     class CheckStatus {
+        //* Define Variables *//
         public string ipeingabe = "";
         public int port_1 = 0, port_2 = 0;
         public bool checkinput1 = true, checkinput2 = true;
@@ -16,17 +17,20 @@ namespace sempt3x_Port_Scanner
     {
         public static void Main(string[] args)
         {
+            //* Create Object *//
             CheckStatus chs = new CheckStatus();
 
+            //* Application Information *//
             Console.WriteLine("SEMPT3X Port Scanner v1.1.0 \n\n"); // Programm Console Beginning Text
             Console.Title = "SEMPT3X Port Scanner v1.1.0";
+
+            //* Frist Loop **//
             do
             {
-                //* Define Variables *//
-
                 Console.Write("Enter the IP address: "); // IP Adress Input
                 chs.ipeingabe = Convert.ToString(Console.ReadLine());
 
+                //* Second Loop **//
                 do {
                 Console.Write("Enter the first port: "); // Port1 Input
                 try {
@@ -54,7 +58,8 @@ namespace sempt3x_Port_Scanner
                 }while(chs.checkinput1 == true || chs.checkinput2 == true);
 
                 Console.WriteLine("\n");
-                do // Begin Do While Loop
+                //** Third Loop **//
+                do
                 {
                     TcpClient client = new TcpClient();
                     chs.port_1++;
