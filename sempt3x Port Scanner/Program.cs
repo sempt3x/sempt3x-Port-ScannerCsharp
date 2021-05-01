@@ -59,21 +59,23 @@ namespace sempt3x_Port_Scanner
                 {
                     var client = new TcpClient();
                     chs.Port1++;
-                    try
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green; // If Port open -> Green
-                        client.Connect(chs.Ipeingabe, chs.Port1);
-                        Console.WriteLine(" [TCP-Port: " + chs.Port1 + " ] Port is open!");
-                    }
-                    catch (SocketException)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red; // If Port closed -> Red
-                        Console.WriteLine(" [TCP-Port: " + chs.Port1 + " ] Port is not open!");
-                    }
+                    
+                        var result = client.BeginConnect(chs.Ipeingabe, chs.Port1, null, null);
+                        var sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
+                        if (!sucess)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // If Port closed -> Red
+                            Console.WriteLine(" [TCP-Port: " + chs.Port1 + " ] Port is not open!");
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green; // If Port open -> Green
+                            Console.WriteLine(" [TCP-Port: " + chs.Port1 + " ] Port is open!");
+                        }
                 } while (chs.Port1 < chs.Port2);
                 //** End Fourth Loop **//
                 Console.ForegroundColor = ConsoleColor.White; // Change Console Font Color to White
-                //** Set all Values of Varabiles to Default **//
+                //** Set all Values of Variables to Default **//
                 chs.Checkinput1 = true;
                 chs.Checkinput2 = true;
                 chs.Checkinput3 = true;
@@ -82,12 +84,6 @@ namespace sempt3x_Port_Scanner
                 chs.Port2 = 0;
             } while (true);
             //** End First Loop **//
-
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("\n\n");
-
-            // Program Ending
         }
     }
 }

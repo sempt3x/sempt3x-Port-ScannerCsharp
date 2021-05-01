@@ -11,6 +11,6 @@ namespace sempt3x_Port_Scanner
 
         public bool Checkinput2 { get; set; } = true;
 
-        public bool  Checkinput3 { get; set; } = true;
+        public bool Checkinput3 { get; set; } = true;
     }
 }
