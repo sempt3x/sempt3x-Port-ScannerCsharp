@@ -15,8 +15,8 @@ namespace sempt3x_Port_Scanner
             var chs = new CheckStatus();
 
             //* Application Information *//
-            Console.WriteLine(" SEMPT3X Port Scanner v1.1.5 \n"); // Program Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v1.1.5"; // Program Title Text
+            Console.WriteLine(" SEMPT3X Port Scanner v1.2.0 \n"); // Program Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v1.2.0"; // Program Title Text
 
             //* Begin Frist Loop **//
             do
