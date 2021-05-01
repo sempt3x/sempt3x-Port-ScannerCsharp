@@ -1,9 +1,6 @@
 namespace sempt3x_Port_Scanner
 {
     public class CheckStatus {
-        //** Define Variables **//
-
-        //** Reset Method **//
         public string Ipeingabe { get; set; } = "";
 
         public int Port1 { get; set; }
