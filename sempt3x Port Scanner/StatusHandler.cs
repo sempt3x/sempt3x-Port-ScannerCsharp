@@ -1,6 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace sempt3x_Port_Scanner
 {
-    public class CheckStatus {
+    class StatusHandler
+    {
         public string Ipeingabe { get; set; } = "";
 
         public int Port1 { get; set; }

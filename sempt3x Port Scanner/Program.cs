@@ -12,7 +12,7 @@ namespace sempt3x_Port_Scanner
         {
             Console.ForegroundColor = ConsoleColor.White; // Set Start Color to White
             //* Create Object *//
-            var chs = new CheckStatus();
+            var chs = new StatusHandler();
 
             //* Application Information *//
             Console.WriteLine(" SEMPT3X Port Scanner v1.2.0 \n"); // Program Console Beginning Text
