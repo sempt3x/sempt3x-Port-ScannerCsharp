@@ -41,7 +41,8 @@ namespace sempt3x_Port_Scanner
                 //** Begin Third Loop **//
 
                 do {
-                    StatusHandler.InputValues();
+                    StatusHandler.Port1_input();
+                    StatusHandler.Port2_input();
                 } while (StatusHandler.Checkinput2 || StatusHandler.Checkinput3);
 
                 //** End Third Loop **//

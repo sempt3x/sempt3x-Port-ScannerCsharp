@@ -17,7 +17,9 @@ namespace sempt3x_Port_Scanner
 
         public static bool Checkinput3 { get; set; } = true;
 
-        public static void InputValues()
+
+        // Port1 Eingabe und Prüfung
+        public static void Port1_input()
         {
             Console.Write(" Enter the first port: "); // Port 1 Input
             try
@@ -29,6 +31,11 @@ namespace sempt3x_Port_Scanner
             {
                 Console.WriteLine(" Failed!");
             }
+        }
+
+        // Port2 Eingabe und Prüfung
+        public static void Port2_input()
+        {
             Console.Write(" Enter the second port: "); // Port 2 Input
             try
             {
@@ -41,6 +48,7 @@ namespace sempt3x_Port_Scanner
             }
         }
 
+        // Funktion zum Prüfen des Status
         public static void CheckStatus()
         {
             TcpClient client = new TcpClient();
@@ -60,6 +68,7 @@ namespace sempt3x_Port_Scanner
             }
         }
 
+        // Funktion zum resetten den Werte
         public static void ResetValues()
         {
             Checkinput1 = true;
