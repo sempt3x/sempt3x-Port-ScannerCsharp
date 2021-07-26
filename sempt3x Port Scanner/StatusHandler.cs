@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net.Sockets;
 
 namespace sempt3x_Port_Scanner
@@ -62,6 +58,16 @@ namespace sempt3x_Port_Scanner
                 Console.ForegroundColor = ConsoleColor.Green; // If Port open -> Green
                 Console.WriteLine(" [TCP-Port: " + Port1 + " ] Port is open!");
             }
+        }
+
+        public static void ResetValues()
+        {
+            Checkinput1 = true;
+            Checkinput2 = true;
+            Checkinput3 = true;
+            Ipeingabe = "";
+            Port1 = 0;
+            Port2 = 0;
         }
     }
 }

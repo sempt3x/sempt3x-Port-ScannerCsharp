@@ -2,7 +2,6 @@
 // Copyright 2021
 
 using System;
-using System.Net.Sockets;
 
 namespace sempt3x_Port_Scanner
 {
@@ -14,8 +13,8 @@ namespace sempt3x_Port_Scanner
 
             //* Application Information *//
 
-            Console.WriteLine(" SEMPT3X Port Scanner v1.2.0 \n"); // Program Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v1.2.0"; // Program Title Text
+            Console.WriteLine(" SEMPT3X Port Scanner v2.0.0 \n"); // Program Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v2.0.0"; // Program Title Text
 
             //* Begin Frist Loop **//
 
@@ -58,12 +57,8 @@ namespace sempt3x_Port_Scanner
                 Console.ForegroundColor = ConsoleColor.White; // Change Console Font Color to White
 
                 //** Set all Values of Variables to Default **//
-                StatusHandler.Checkinput1 = true;
-                StatusHandler.Checkinput2 = true;
-                StatusHandler.Checkinput3 = true;
-                StatusHandler.Ipeingabe = "";
-                StatusHandler.Port1 = 0;
-                StatusHandler.Port2 = 0;
+
+                StatusHandler.ResetValues();
             } while (true);
             //** End First Loop **//
         }
