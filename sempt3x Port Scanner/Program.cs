@@ -25,14 +25,14 @@ namespace sempt3x_Port_Scanner
                 //** Begin Second Loop **/
 
                 do {
-                    if (string.IsNullOrEmpty(StatusHandler.Ipeingabe))
+                    if (!string.IsNullOrEmpty(StatusHandler.Ipeingabe))
                     {
-                        StatusHandler.Checkinput1 = true;
-                        StatusHandler.Ipeingabe = Convert.ToString(Console.ReadLine());
+                        StatusHandler.Checkinput1 = false;
                     }
                     else
                     {
-                        StatusHandler.Checkinput1 = false;
+                        StatusHandler.Checkinput1 = true;
+                        StatusHandler.Ipeingabe = Convert.ToString(Console.ReadLine());
                     }
                 } while (StatusHandler.Checkinput1);
 

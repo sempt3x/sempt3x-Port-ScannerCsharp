@@ -3,7 +3,7 @@ using System.Net.Sockets;
 
 namespace sempt3x_Port_Scanner
 {
-  static class StatusHandler
+  public static class StatusHandler
     {
         public static string Ipeingabe { get; set; } = "";
 
