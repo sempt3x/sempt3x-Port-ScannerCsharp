@@ -43,11 +43,11 @@ namespace sempt3x_Port_Scanner
 
         public static void CheckStatus()
         {
-            var client = new TcpClient();
+            TcpClient client = new TcpClient();
             Port1++;
 
-            var result = client.BeginConnect(Ipeingabe, Port1, null, null);
-            var sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
+            IAsyncResult result = client.BeginConnect(Ipeingabe, Port1, null, null);
+            bool sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
             if (!sucess)
             {
                 Console.ForegroundColor = ConsoleColor.Red; // If Port closed -> Red

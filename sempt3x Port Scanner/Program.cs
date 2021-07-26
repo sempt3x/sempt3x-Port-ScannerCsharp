@@ -13,8 +13,8 @@ namespace sempt3x_Port_Scanner
 
             //* Application Information *//
 
-            Console.WriteLine(" SEMPT3X Port Scanner v2.0.0 \n"); // Program Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v2.0.0"; // Program Title Text
+            Console.WriteLine(" SEMPT3X Port Scanner v2.1.0 \n"); // Program Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v2.1.0"; // Program Title Text
 
             //* Begin Frist Loop **//
 
@@ -25,13 +25,16 @@ namespace sempt3x_Port_Scanner
                 //** Begin Second Loop **/
 
                 do {
-                    if(string.IsNullOrEmpty(StatusHandler.Ipeingabe)) {
+                    if (string.IsNullOrEmpty(StatusHandler.Ipeingabe))
+                    {
                         StatusHandler.Checkinput1 = true;
                         StatusHandler.Ipeingabe = Convert.ToString(Console.ReadLine());
-                    } else {
+                    }
+                    else
+                    {
                         StatusHandler.Checkinput1 = false;
                     }
-                }while(StatusHandler.Checkinput1 == true);
+                } while (StatusHandler.Checkinput1);
 
                 //** End Second Loop **//
 
@@ -39,7 +42,7 @@ namespace sempt3x_Port_Scanner
 
                 do {
                     StatusHandler.InputValues();
-                }while(StatusHandler.Checkinput2|| StatusHandler.Checkinput3);
+                } while (StatusHandler.Checkinput2 || StatusHandler.Checkinput3);
 
                 //** End Third Loop **//
 
@@ -50,7 +53,8 @@ namespace sempt3x_Port_Scanner
                 do
                 {
                     StatusHandler.CheckStatus();
-                } while (StatusHandler.Port1 < StatusHandler.Port2);
+                } while (StatusHandler.Port1
+                < StatusHandler.Port2);
 
                 //** End Fourth Loop **//
 
