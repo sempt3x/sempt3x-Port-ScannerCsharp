@@ -18,6 +18,24 @@ namespace sempt3x_Port_Scanner
         public static bool Checkinput3 { get; set; } = true;
 
 
+        // IP Eingabge und Prüfung
+        public static void IP_Eingabge()
+        {
+            Console.Write("\n Enter the IP address: "); // IP Adress Input
+            do
+            {
+                if (!string.IsNullOrEmpty(Ipeingabe))
+                {
+                    Checkinput1 = false;
+                }
+                else
+                {
+                    Checkinput1 = true;
+                    Ipeingabe = Convert.ToString(Console.ReadLine());
+                }
+            } while (Checkinput1);
+        }
+
         // Port1 Eingabe und Prüfung
         public static void Port1_input()
         {
@@ -51,21 +69,24 @@ namespace sempt3x_Port_Scanner
         // Funktion zum Prüfen des Status
         public static void CheckStatus()
         {
-            TcpClient client = new TcpClient();
-            Port1++;
+            do
+            {
+                TcpClient client = new TcpClient();
+                Port1++;
 
-            IAsyncResult result = client.BeginConnect(Ipeingabe, Port1, null, null);
-            bool sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
-            if (!sucess)
-            {
-                Console.ForegroundColor = ConsoleColor.Red; // If Port closed -> Red
-                Console.WriteLine(" [TCP-Port: " + Port1 + " ] Port is not open!");
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Green; // If Port open -> Green
-                Console.WriteLine(" [TCP-Port: " + Port1 + " ] Port is open!");
-            }
+                IAsyncResult result = client.BeginConnect(Ipeingabe, Port1, null, null);
+                bool sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
+                if (!sucess)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red; // If Port closed -> Red
+                    Console.WriteLine(" [TCP-Port: " + Port1 + " ] Port is not open!");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green; // If Port open -> Green
+                    Console.WriteLine(" [TCP-Port: " + Port1 + " ] Port is open!");
+                }
+            } while (Port1< Port2);
         }
 
         // Funktion zum resetten den Werte
