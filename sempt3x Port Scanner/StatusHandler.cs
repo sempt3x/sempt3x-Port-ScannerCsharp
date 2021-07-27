@@ -5,11 +5,13 @@ namespace sempt3x_Port_Scanner
 {
   public static class StatusHandler
     {
+        // Variablen
+
         public static string Ipeingabe { get; set; } = "";
 
-        public static int Port1 { get; set; }
+        public static int Port1 { get; set; } = 0;
 
-        public static int Port2 { get; set; }
+        public static int Port2 { get; set; } = 2;
 
         public static bool Checkinput1 { get; set; } = true;
 
@@ -19,6 +21,7 @@ namespace sempt3x_Port_Scanner
 
 
         // IP Eingabge und Prüfung
+
         public static void IpInput()
         {
             Console.Write("\n Enter the IP address: "); // IP Adress Input
@@ -37,6 +40,7 @@ namespace sempt3x_Port_Scanner
         }
 
         // Port1 Eingabe und Prüfung
+
         public static void Port1Input()
         {
             Console.Write(" Enter the first port: "); // Port 1 Input
@@ -52,6 +56,7 @@ namespace sempt3x_Port_Scanner
         }
 
         // Port2 Eingabe und Prüfung
+
         public static void Port2Input()
         {
             Console.Write(" Enter the second port: "); // Port 2 Input
@@ -67,6 +72,7 @@ namespace sempt3x_Port_Scanner
         }
 
         // Funktion zum Prüfen des Status
+
         public static void CheckStatus()
         {
             do
@@ -90,6 +96,7 @@ namespace sempt3x_Port_Scanner
         }
 
         // Funktion zum resetten den Werte
+
         public static void ResetValues()
         {
             Checkinput1 = true;
@@ -99,5 +106,7 @@ namespace sempt3x_Port_Scanner
             Port1 = 0;
             Port2 = 0;
         }
+
+        // Ende
     }
 }

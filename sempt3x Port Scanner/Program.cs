@@ -13,17 +13,26 @@ namespace sempt3x_Port_Scanner
 
             //* Application Information *//
 
-            Console.WriteLine(" SEMPT3X Port Scanner v3.0.0 \n"); // Program Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v3.0.0"; // Program Title Text
+            Console.WriteLine(" SEMPT3X Port Scanner v3.5.0 \n"); // Program Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v3.5.0"; // Program Title Text
 
             do
             {
+                // IP Eingabe
+
                 StatusHandler.IpInput();
 
+                // Port 1 eingabe
+
                 StatusHandler.Port1Input();
+
+                // Port 2 eingabe
+
                 StatusHandler.Port2Input();
 
                 Console.WriteLine("\n");
+
+                // Prüfung der Eingabe
 
                 StatusHandler.CheckStatus();
 
