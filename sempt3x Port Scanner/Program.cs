@@ -18,10 +18,10 @@ namespace sempt3x_Port_Scanner
 
             do
             {
-                StatusHandler.IP_Eingabge();
+                StatusHandler.IpInput();
 
-                StatusHandler.Port1_input();
-                StatusHandler.Port2_input();
+                StatusHandler.Port1Input();
+                StatusHandler.Port2Input();
 
                 Console.WriteLine("\n");
 

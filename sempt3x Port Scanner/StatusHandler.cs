@@ -19,7 +19,7 @@ namespace sempt3x_Port_Scanner
 
 
         // IP Eingabge und Prüfung
-        public static void IP_Eingabge()
+        public static void IpInput()
         {
             Console.Write("\n Enter the IP address: "); // IP Adress Input
             do
@@ -37,7 +37,7 @@ namespace sempt3x_Port_Scanner
         }
 
         // Port1 Eingabe und Prüfung
-        public static void Port1_input()
+        public static void Port1Input()
         {
             Console.Write(" Enter the first port: "); // Port 1 Input
             try
@@ -52,7 +52,7 @@ namespace sempt3x_Port_Scanner
         }
 
         // Port2 Eingabe und Prüfung
-        public static void Port2_input()
+        public static void Port2Input()
         {
             Console.Write(" Enter the second port: "); // Port 2 Input
             try
