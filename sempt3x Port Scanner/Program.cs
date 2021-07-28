@@ -13,36 +13,32 @@ namespace sempt3x_Port_Scanner
 
             //* Application Information *//
 
-            Console.WriteLine(" SEMPT3X Port Scanner v3.5.0 \n"); // Program Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v3.5.0"; // Program Title Text
+            Console.WriteLine(" SEMPT3X Port Scanner v3.7.0 \n"); // Program Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v3.7.0"; // Program Title Text
 
-            do
-            {
-                // IP Eingabe
+            // IP Eingabe
 
-                StatusHandler.IpInput();
+            StatusHandler.IpInput();
 
-                // Port 1 eingabe
+            // Port 1 eingabe
 
-                StatusHandler.Port1Input();
+            StatusHandler.Port1Input();
 
-                // Port 2 eingabe
+            // Port 2 eingabe
 
-                StatusHandler.Port2Input();
+            StatusHandler.Port2Input();
 
-                Console.WriteLine("\n");
+            Console.WriteLine("\n");
 
-                // Prüfung der Eingabe
+            // Prüfung der Eingabe
 
-                StatusHandler.CheckStatus();
+            StatusHandler.CheckStatus();
 
-                Console.ForegroundColor = ConsoleColor.White; // Change Console Font Color to White
+            Console.ForegroundColor = ConsoleColor.White; // Change Console Font Color to White
 
-                //** Set all Values of Variables to Default **//
+            //** Set all Values of Variables to Default **//
 
-                StatusHandler.ResetValues();
-
-            } while (true);
+            StatusHandler.ResetValues();
         }
     }
 }
