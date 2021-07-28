@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net.Sockets;
 
 namespace sempt3x_Port_Scanner
@@ -85,14 +86,19 @@ namespace sempt3x_Port_Scanner
                 if (!sucess)
                 {
                     Console.ForegroundColor = ConsoleColor.Red; // If Port closed -> Red
-                    Console.WriteLine(" [TCP-Port: " + Port1 + " ] Port is not open!");
+                    string Finish = " [TCP-Port: " + Port1 + " ] Port is not open!";
+                    Console.WriteLine(Finish);
+                    SaveHandler.AddLogs(Finish);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Green; // If Port open -> Green
-                    Console.WriteLine(" [TCP-Port: " + Port1 + " ] Port is open!");
+                    string Finish = " [TCP-Port: " + Port1 + " ] Port is open!";
+                    Console.WriteLine(Finish);
+                    SaveHandler.AddLogs(Finish);
                 }
             } while (Port1< Port2);
+            SaveHandler.SaveLogsAsFile();
         }
 
         // Funktion zum resetten den Werte
@@ -106,7 +112,5 @@ namespace sempt3x_Port_Scanner
             Port1 = 0;
             Port2 = 0;
         }
-
-        // Ende
     }
 }
