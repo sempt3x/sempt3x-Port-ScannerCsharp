@@ -50,9 +50,9 @@ namespace sempt3x_Port_Scanner
                 Port1 = Convert.ToInt32(Console.ReadLine());
                 Checkinput2 = string.IsNullOrEmpty(Port1.ToString());
             }
-            catch (FormatException)
+            catch (FormatException fe)
             {
-                Console.WriteLine(" Failed!");
+                Console.WriteLine(" Failed with "+fe);
             }
         }
 
@@ -66,9 +66,9 @@ namespace sempt3x_Port_Scanner
                 Port2 = Convert.ToInt32(Console.ReadLine());
                 Checkinput3 = string.IsNullOrEmpty(Port2.ToString());
             }
-            catch
+            catch(Exception e)
             {
-                Console.WriteLine(" Failed!");
+                Console.WriteLine(" Failed with "+e);
             }
         }
 
@@ -102,6 +102,18 @@ namespace sempt3x_Port_Scanner
         }
 
         // Funktion zum resetten den Werte
+
+        public static void EndOfProgram()
+        {
+            try
+            {
+                Console.WriteLine("\n"+" Drücken Sie eine beliebige Taste zum beenden");
+                Console.ReadLine();
+            } catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
 
         public static void ResetValues()
         {

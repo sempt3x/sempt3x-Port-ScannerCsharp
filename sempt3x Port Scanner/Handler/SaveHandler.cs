@@ -19,11 +19,23 @@ namespace sempt3x_Port_Scanner
 
         static public void AddLogs(string Value)
         {
-            Logs.Add(Value);
+            try
+            {
+                Logs.Add(Value);
+            } catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
         static public void SaveLogsAsFile()
         {
-            System.IO.File.WriteAllLines("SCAN_"+Year+"_"+Month+"_"+Day+"_"+Hour+"_"+Minute+"_"+Second+".txt", Logs);
+            try
+            {
+                System.IO.File.WriteAllLines("SCAN_" + Year + "_" + Month + "_" + Day + "_" + Hour + "_" + Minute + "_" + Second + ".txt", Logs);
+            } catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

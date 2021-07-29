@@ -13,8 +13,8 @@ namespace sempt3x_Port_Scanner
 
             //* Application Information *//
 
-            Console.WriteLine(" SEMPT3X Port Scanner v3.7.0 \n"); // Program Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v3.7.0"; // Program Title Text
+            Console.WriteLine(" SEMPT3X Port Scanner v3.7.5 \n"); // Program Console Beginning Text
+            Console.Title = "SEMPT3X Port Scanner v3.7.5"; // Program Title Text
 
             // IP Eingabe
 
@@ -39,6 +39,8 @@ namespace sempt3x_Port_Scanner
             //** Set all Values of Variables to Default **//
 
             StatusHandler.ResetValues();
+
+            StatusHandler.EndOfProgram();
         }
     }
 }
