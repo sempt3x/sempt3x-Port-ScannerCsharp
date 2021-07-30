@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sempt3x_Port_Scanner
 {
-    static class SaveHandler
+    public static class SaveHandler
     {
         public static Int32 Second = DateTime.Now.Second;
         public static Int32 Minute = DateTime.Now.Minute;

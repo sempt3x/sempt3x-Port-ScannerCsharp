@@ -42,5 +42,6 @@ namespace sempt3x_Port_Scanner
 
             StatusHandler.EndOfProgram();
         }
+        
     }
 }
