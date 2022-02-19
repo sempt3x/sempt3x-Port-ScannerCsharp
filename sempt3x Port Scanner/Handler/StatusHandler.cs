@@ -24,7 +24,7 @@ namespace sempt3x_Port_Scanner
 
         public static void IpInput()
         {
-            Log.Msg("\n Enter the IP address: "); // IP Adress Input
+            Log.Msg("\nEnter the IP address: "); // IP Adress Input
             do
             {
                 if (!string.IsNullOrEmpty(Ipeingabe))
@@ -43,7 +43,7 @@ namespace sempt3x_Port_Scanner
 
         public static void Port1Input()
         {
-            Log.Msg(" Enter the first port: "); // Port 1 Input
+            Log.Msg("Enter the first port: "); // Port 1 Input
             try
             {
                 Port1 = Convert.ToInt32(Console.ReadLine());
@@ -51,7 +51,7 @@ namespace sempt3x_Port_Scanner
             }
             catch (FormatException fe)
             {
-                Console.WriteLine(" Failed with "+fe);
+                Console.WriteLine("Failed with "+fe);
             }
         }
 
@@ -59,7 +59,7 @@ namespace sempt3x_Port_Scanner
 
         public static void Port2Input()
         {
-            Log.Msg(" Enter the second port: "); // Port 2 Input
+            Log.Msg("Enter the second port: "); // Port 2 Input
             try
             {
                 Port2 = Convert.ToInt32(Console.ReadLine());
@@ -67,7 +67,7 @@ namespace sempt3x_Port_Scanner
             }
             catch(Exception e)
             {
-                Console.WriteLine(" Failed with "+e);
+                Console.WriteLine("Failed with "+e);
             }
         }
 
@@ -84,13 +84,13 @@ namespace sempt3x_Port_Scanner
                 bool sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
                 if (!sucess)
                 {
-                    string Finish = " [TCP-Port: " + Port1 + " ] Port is not open!";
+                    string Finish = "[TCP-Port: " + Port1 + " ] Port is not open!";
                     Log.Err(Finish);
                     SaveHandler.AddLogs(Finish);
                 }
                 else
                 {
-                    string Finish = " [TCP-Port: " + Port1 + " ] Port is open!";
+                    string Finish = "[TCP-Port: " + Port1 + " ] Port is open!";
                     Log.Rdy(Finish);
                     SaveHandler.AddLogs(Finish);
                 }
@@ -104,7 +104,7 @@ namespace sempt3x_Port_Scanner
         {
             try
             {
-                Log.Msg("\n"+" Drücken Sie eine beliebige Taste zum beenden");
+                Log.Msg("\n"+"Drücken Sie eine beliebige Taste zum beenden");
                 Console.ReadLine();
             } catch(Exception e)
             {
