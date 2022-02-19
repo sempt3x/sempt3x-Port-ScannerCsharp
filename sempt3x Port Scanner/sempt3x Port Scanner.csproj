@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handler\LogHandler.cs" />
     <Compile Include="Handler\ServerClientCheckHandler.cs" />
-    <Compile Include="Handler\TestHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Handler\SaveHandler.cs" />

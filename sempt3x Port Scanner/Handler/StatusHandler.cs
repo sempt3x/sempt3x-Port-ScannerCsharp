@@ -43,7 +43,7 @@ namespace sempt3x_Port_Scanner
 
         public static void Port1Input()
         {
-            Console.Write(" Enter the first port: "); // Port 1 Input
+            Log.msg(" Enter the first port: "); // Port 1 Input
             try
             {
                 Port1 = Convert.ToInt32(Console.ReadLine());
@@ -59,7 +59,7 @@ namespace sempt3x_Port_Scanner
 
         public static void Port2Input()
         {
-            Console.Write(" Enter the second port: "); // Port 2 Input
+            Log.msg(" Enter the second port: "); // Port 2 Input
             try
             {
                 Port2 = Convert.ToInt32(Console.ReadLine());
@@ -84,16 +84,14 @@ namespace sempt3x_Port_Scanner
                 bool sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
                 if (!sucess)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red; // If Port closed -> Red
                     string Finish = " [TCP-Port: " + Port1 + " ] Port is not open!";
-                    Console.WriteLine(Finish);
+                    Log.Error(Finish);
                     SaveHandler.AddLogs(Finish);
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Green; // If Port open -> Green
                     string Finish = " [TCP-Port: " + Port1 + " ] Port is open!";
-                    Console.WriteLine(Finish);
+                    Log.Correct(Finish);
                     SaveHandler.AddLogs(Finish);
                 }
             } while (Port1< Port2);
@@ -106,7 +104,7 @@ namespace sempt3x_Port_Scanner
         {
             try
             {
-                Console.WriteLine("\n"+" Drücken Sie eine beliebige Taste zum beenden");
+                Log.msg("\n"+" Drücken Sie eine beliebige Taste zum beenden");
                 Console.ReadLine();
             } catch(Exception e)
             {
