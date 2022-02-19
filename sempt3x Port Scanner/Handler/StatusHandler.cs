@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Net.Sockets;
 
 namespace sempt3x_Port_Scanner
