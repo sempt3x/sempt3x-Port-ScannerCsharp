@@ -24,7 +24,7 @@ namespace sempt3x_Port_Scanner
 
         public static void IpInput()
         {
-            Console.Write("\n Enter the IP address: "); // IP Adress Input
+            Log.Msg("\n Enter the IP address: "); // IP Adress Input
             do
             {
                 if (!string.IsNullOrEmpty(Ipeingabe))
@@ -43,7 +43,7 @@ namespace sempt3x_Port_Scanner
 
         public static void Port1Input()
         {
-            Log.msg(" Enter the first port: "); // Port 1 Input
+            Log.Msg(" Enter the first port: "); // Port 1 Input
             try
             {
                 Port1 = Convert.ToInt32(Console.ReadLine());
@@ -59,7 +59,7 @@ namespace sempt3x_Port_Scanner
 
         public static void Port2Input()
         {
-            Log.msg(" Enter the second port: "); // Port 2 Input
+            Log.Msg(" Enter the second port: "); // Port 2 Input
             try
             {
                 Port2 = Convert.ToInt32(Console.ReadLine());
@@ -85,13 +85,13 @@ namespace sempt3x_Port_Scanner
                 if (!sucess)
                 {
                     string Finish = " [TCP-Port: " + Port1 + " ] Port is not open!";
-                    Log.Error(Finish);
+                    Log.Err(Finish);
                     SaveHandler.AddLogs(Finish);
                 }
                 else
                 {
                     string Finish = " [TCP-Port: " + Port1 + " ] Port is open!";
-                    Log.Correct(Finish);
+                    Log.Rdy(Finish);
                     SaveHandler.AddLogs(Finish);
                 }
             } while (Port1< Port2);
@@ -104,7 +104,7 @@ namespace sempt3x_Port_Scanner
         {
             try
             {
-                Log.msg("\n"+" Drücken Sie eine beliebige Taste zum beenden");
+                Log.Msg("\n"+" Drücken Sie eine beliebige Taste zum beenden");
                 Console.ReadLine();
             } catch(Exception e)
             {
