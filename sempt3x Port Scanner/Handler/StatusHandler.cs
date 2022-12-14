@@ -51,7 +51,7 @@ namespace sempt3x_Port_Scanner
             }
             catch (FormatException fe)
             {
-                Console.WriteLine("Failed with "+fe);
+                Console.Write("Failed with "+fe);
             }
         }
 
@@ -67,7 +67,7 @@ namespace sempt3x_Port_Scanner
             }
             catch(Exception e)
             {
-                Console.WriteLine("Failed with "+e);
+                Console.Write("Failed with "+e);
             }
         }
 
@@ -80,19 +80,25 @@ namespace sempt3x_Port_Scanner
                 TcpClient client = new TcpClient();
                 Port1++;
 
-                IAsyncResult result = client.BeginConnect(Ipeingabe, Port1, null, null);
-                bool sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
-                if (!sucess)
+                try
                 {
-                    string Finish = "[TCP-Port: " + Port1 + " ] Port is not open!";
-                    Log.Err(Finish);
-                    SaveHandler.AddLogs(Finish);
-                }
-                else
+                    IAsyncResult result = client.BeginConnect(Ipeingabe, Port1, null, null);
+                    bool sucess = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(1));
+                    if (!sucess)
+                    {
+                        string Finish = "[TCP-Port: " + Port1 + " ] Port is not open!";
+                        Log.Err(Finish);
+                        SaveHandler.AddLogs(Finish);
+                    }
+                    else
+                    {
+                        string Finish = "[TCP-Port: " + Port1 + " ] Port is open!";
+                        Log.Rdy(Finish);
+                        SaveHandler.AddLogs(Finish);
+                    }
+                } catch(Exception e)
                 {
-                    string Finish = "[TCP-Port: " + Port1 + " ] Port is open!";
-                    Log.Rdy(Finish);
-                    SaveHandler.AddLogs(Finish);
+                    Console.Write(e);
                 }
             } while (Port1< Port2);
             SaveHandler.SaveLogsAsFile();
