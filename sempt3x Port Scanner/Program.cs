@@ -9,6 +9,7 @@ namespace sempt3x_Port_Scanner
     {
         public static void Main(string[] args)
         {
+            Console.Title = "TCP Port Scanner made by sempt3x";
             // IP Eingabe
 
             StatusHandler.IpInput();
