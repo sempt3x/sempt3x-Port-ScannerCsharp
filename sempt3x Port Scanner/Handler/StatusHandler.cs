@@ -46,7 +46,7 @@ namespace sempt3x_Port_Scanner
             Log.Msg("Enter the first port: "); // Port 1 Input
             try
             {
-                Port1 = Convert.ToInt32(Console.ReadLine());
+                Port1 = Convert.ToInt32(Console.ReadLine())-1;
                 Checkinput2 = string.IsNullOrEmpty(Port1.ToString());
             }
             catch (FormatException fe)

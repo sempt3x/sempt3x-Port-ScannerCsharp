@@ -9,13 +9,6 @@ namespace sempt3x_Port_Scanner
     {
         public static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.White; // Set Start Color to White
-
-            //* Application Information *//
-
-            Console.WriteLine("SEMPT3X Port Scanner v4.0.0"); // Program Console Beginning Text
-            Console.Title = "SEMPT3X Port Scanner v4.0.0"; // Program Title Text
-
             // IP Eingabe
 
             StatusHandler.IpInput();
